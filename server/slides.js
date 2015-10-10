@@ -3,5 +3,13 @@ Meteor.publish('slides', function() {
 })
 
 Meteor.methods({
-  
+	addSlide: function(params){
+		Slides.insert({
+			"name": params.name,
+			"index": params.index,
+			"filename": params.filename,
+			"current": "0"
+		});
+		return 'OK';
+	}
 });

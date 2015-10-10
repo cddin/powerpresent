@@ -1,0 +1,20 @@
+<template name="slidesView">
+	<div>
+		<table class="table table-striped">
+			<thead>
+				<tr>
+		          <th>#</th>
+		          <th>Name</th>
+		          <th>Filename</th>
+		        </tr>
+			</thead>
+			{{#each slides}}
+			<tr>
+				<td>#{{ index }}</td>
+				<td>{{ name }}</td>
+				<td>{{ filename }}</td>
+			</tr>
+			{{/each}}
+		</table>
+	</div>
+</template>
