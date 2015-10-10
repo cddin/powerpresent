@@ -4,6 +4,8 @@ Router.configure({
 });
 
 Router.route('/', {name: 'home', controller: 'MainController'});
+Router.route('/admin', {name: 'adminView'});
+Router.route('/client', {name: 'clientView'});
 
 MainController = RouteController.extend({
   action: function() {

@@ -2,3 +2,5 @@ standard-app-packages
 iron:router
 twbs:bootstrap
 standard-minifiers
+fourseven:scss
+msavin:mongol
