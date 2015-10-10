@@ -1,5 +1,18 @@
 <template name="clientView">
-{{> loginButtons}} ksjfksdfsfsd
+<!--{{> loginButtons}} ksjfksdfsfsd-->
 
-<button class="test-btn">test</button>
+<!--<button class="test-btn">test</button>-->
+<!--<img src="/images/img01.png">pgwSlideshow-->
+<ul id="slideShow" class="pgwSlideshow">
+    {{#if Template.subscriptionsReady}}
+        {{#each slides}}
+            <li><img src="/images/{{filename}}"></li>
+        {{/each}}
+    
+    {{/if}}
+</ul>
+<!--<button class="test-btn">test</button>-->
+<button type="button" class="btn btn-primary btn-block btn-current">current slide</button>
 </template>
+
+

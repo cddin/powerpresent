@@ -1,6 +1,9 @@
 Router.configure({
   layoutTemplate: 'layout',
-  loadingTemplate: 'loading'
+  loadingTemplate: 'loading',
+  waitOn: function() { 
+			return Meteor.subscribe('slides');
+		}
 });
 
 Router.route('/', {name: 'home', controller: 'MainController'});

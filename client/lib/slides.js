@@ -1,1 +1,1 @@
-Meteor.subscribe('slides');
+// move to router
