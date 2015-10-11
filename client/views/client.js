@@ -11,9 +11,19 @@ Template.clientView.helpers({
 Template.clientView.events({
 
 	"click .btn-current": function (event) {
-		// Meteor.call("addNotes", "aa", "bb", "cc", function () {
-		// });
 		updateCurrent();
+	},
+	"click .btn-footnote": function (event) {
+		
+		console.log(pgwSlideshow.getCurrentSlide());
+		
+		var sl = Slides.find({index:pgwSlideshow.getCurrentSlide()});
+		console.log(sl.fetch()[0]._id);
+		
+		// Router.go("addnoteView", {_id:sl.fetch()[0]._id}, {query: 'test=abcdefg'});
+		// this.params.query.test
+		
+		Router.go("addnoteView", {_id:sl.fetch()[0]._id});
 	}
 });
 
@@ -29,6 +39,15 @@ Template.clientView.onRendered(function () {
 			updateCurrent();
 		}
 	});
+	
+// 	globalHotkeys = new Hotkeys();
+// 	globalHotkeys.add({
+//     combo : "a",
+//     callback : function(){
+//         alert("You pressed A");
+//     }
+// })
+	
 });
 
 var pgwSlideshow;
@@ -55,3 +74,4 @@ function updateCurrent(){
 		pgwSlideshow.displaySlide(sl.fetch()[0].index);
 	}
 }
+

@@ -1,8 +1,7 @@
 <template name="clientView">
+    <div class="container-fluid slideContainer">
 <!--{{> loginButtons}} ksjfksdfsfsd-->
 
-<!--<button class="test-btn">test</button>-->
-<!--<img src="/images/img01.png">pgwSlideshow-->
 <ul id="slideShow" class="pgwSlideshow">
     {{#if Template.subscriptionsReady}}
         {{#each slides}}
@@ -11,8 +10,12 @@
     
     {{/if}}
 </ul>
-<!--<button class="test-btn">test</button>-->
-<button type="button" class="btn btn-primary btn-block btn-current">current slide</button>
+
+<div class="row">
+  <div class="col-md-6"><button type="button" class="btn btn-primary btn-block btn-current">current slide</button></div>
+  <div class="col-md-6"><button type="button" class="btn btn-primary btn-block btn-footnote">footnote</button></div>
+</div>
+</div>
 </template>
 
 
