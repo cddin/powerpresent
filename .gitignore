@@ -1,4 +1,5 @@
 ### WebStorm ###
+.meteor/
 .idea/
 .DS_STORE
 
