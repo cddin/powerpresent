@@ -6,9 +6,9 @@ Router.configure({
 		}
 });
 
-Router.route('/', {name: 'home', controller: 'MainController'});
+Router.route('/', {name: 'presentationView'});
 Router.route('/admin', {name: 'adminView'});
-Router.route('/presentation', {name: 'presentationView'});
+// Router.route('/presentation', {name: 'presentationView'});
 Router.route('/client', {name: 'clientView'});
 Router.route('/note/:_id', {
   name: 'notesView',

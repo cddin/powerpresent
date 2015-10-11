@@ -13,7 +13,12 @@
 
 <div class="row">
   <div class="col-md-6"><button type="button" class="btn btn-primary btn-block btn-current">current slide</button></div>
-  <div class="col-md-6"><button type="button" class="btn btn-primary btn-block btn-footnote">footnote</button></div>
+</div>
+<div class="container form-note">
+		<form id="formnote" data-slideid="{{slideId}}">
+			<textarea placeholder="create note. (audience able to add simple note to each slide for their own usage)" name="note" class="form-control" rows="3"></textarea>
+			<button type="submit" class="btn btn-primary btn-block btn-current disabled">Add note (mock UI)</button>
+		</form>
 </div>
 </div>
 </template>

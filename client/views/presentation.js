@@ -124,6 +124,11 @@ Template.presentationView.onRendered(function() {
 Template.presentationView.helpers({
 
 	slide : function() {
+		
+		console.log(Slides.findOne({
+			current: '1'
+		}));
+		
 		return Slides.findOne({
 			current: '1'
 		});

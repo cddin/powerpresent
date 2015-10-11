@@ -1,7 +1,7 @@
 Template.clientView.helpers({
 
 	slides: function () {
-		var slideList = Slides.find({});
+		var slideList = Slides.find({},{sort:{index:1}});
 		console.log(slideList.fetch());
 		return slideList;
 	}
@@ -24,7 +24,13 @@ Template.clientView.events({
 		// this.params.query.test
 		
 		Router.go("addnoteView", {_id:sl.fetch()[0]._id});
-	}
+	},
+	
+	'submit form': function(e) {
+			e.preventDefault();
+			Meteor.call("addNotes", $('#formnote').data("slideid"), $(e.target).find('[name=note]').val(), "test", function () {
+			});
+		}
 });
 
 Template.clientView.onRendered(function () {
@@ -36,6 +42,8 @@ Template.clientView.onRendered(function () {
 	
 	Slides.find().observeChanges({
 		changed: function (id, fields) {
+			console.log(id);
+			console.log(fields);
 			updateCurrent();
 		}
 	});
@@ -59,8 +67,10 @@ function refreshSlide(){
 	if(Slides.find({}).fetch().length>0){
 		if(!pgwSlideshow){
 			pgwSlideshow = $('.pgwSlideshow').pgwSlideshow();
+			updateCurrent()
 		}else{
 			pgwSlideshow.reload();
+			updateCurrent();
 		}
 	}
 }
@@ -69,9 +79,10 @@ function updateCurrent(){
 	var sl = Slides.find({current:"1"});
 	console.log(sl.fetch());
 	if(sl.fetch().length==0){
-		pgwSlideshow.displaySlide(1);
-	}else{
-		pgwSlideshow.displaySlide(sl.fetch()[0].index);
+		return;
 	}
+	//else{
+		pgwSlideshow.displaySlide(parseInt(sl.fetch()[0].index));
+	// }
 }
 

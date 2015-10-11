@@ -8,12 +8,17 @@ Meteor.methods({
 	addSlide: function(params) {
 		console.log(process.env);
 		
+		var currentval = "0";
+		if(params.index=="1"){
+			currentval = "1"
+		}
+		
 		Slides.insert({
 			"name": params.name,
 			"index": params.index,
 			"filename": params.filename,
 			"file": params.file,
-			"current": "0"
+			"current": currentval
 		});
 		return 'OK';
 	},
