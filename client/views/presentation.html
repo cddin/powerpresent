@@ -1,0 +1,10 @@
+<template name="presentationView">
+	<button id="goFull" class="btn btn-lg btn-warning">GO FULLSCREEN</button>
+	{{#with slide }}
+	<div id="slide" class="presentation" data-slideindex="{{ index }}">
+		{{#with image filename }}
+		<img src="{{ this.url }}" class="slide-image">
+		{{/with }}
+	</div>
+	{{/with}}
+</template>

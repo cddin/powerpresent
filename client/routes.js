@@ -8,6 +8,7 @@ Router.configure({
 
 Router.route('/', {name: 'home', controller: 'MainController'});
 Router.route('/admin', {name: 'adminView'});
+Router.route('/presentation', {name: 'presentationView'});
 Router.route('/client', {name: 'clientView'});
 Router.route('/note/:_id', {
   name: 'notesView',
@@ -47,5 +48,3 @@ MainController = RouteController.extend({
 
 
 
-// // Meteor.call("addNotes", "aa", "bb", "cc", function () {
-		// });

@@ -1,0 +1,14 @@
+standard-app-packages
+iron:router
+twbs:bootstrap
+standard-minifiers
+fourseven:scss
+msavin:mongol
+accounts-password
+accounts-ui
+flowkey:hotkeys
+cfs:gridfs
+cfs:ui
+mrt:jquery-ui-sortable
+cfs:standard-packages
+cfs:filesystem

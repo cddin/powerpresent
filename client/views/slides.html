@@ -1,0 +1,18 @@
+<template name="slidesView">
+	<div>
+
+		<ul id="slides-list" class="media-list">
+			{{#each slides}}
+			<li data-index="{{ index }}" data-id="{{ _id }}" class="slide-item">
+			  	<div class="text-center pull-right">
+		    		<a href="#" class="delete-slide" data-id="{{ _id }}"><i class="glyphicon glyphicon-remove pull-right"></i></a>
+		    	</div>
+		    	{{#with images filename }}
+			    <img class="media-object thumbnail" width="150" src="{{ this.url uploading='/images/uploading.gif' storing='/images/saving.gif' }}" alt="{{ name }}" title="{{ name }}">
+			    {{/with}}
+			</li>
+			{{/each}}
+		</ul>
+
+	</div>
+</template>

@@ -5,3 +5,51 @@
 .ps-current ul {
 	padding-left:0;
 }
+
+.media-list {
+	width: 100%;
+	min-height: 120px;
+}
+.slide-item {
+	/*min-width: 150px;*/
+	padding: 5px;
+	display: inline-block;
+	/*border: 1px solid red;*/
+	/*margin-left: 5px;*/
+}
+.slide-item .delete-slide {
+	position: relative;
+	right: 8px;
+	top: -8px;
+}
+.presentation {
+	background-color: #000;
+	text-align: center;
+}
+.presentation .slide-image {
+	/*width: 100%;
+	height: 100%;*/
+	height: 100vh;
+}
+.presentation.fullscreen .slide-image {
+	height: 100vh;
+}
+*:fullscreen
+*:-ms-fullscreen,
+*:-webkit-full-screen,
+*:-moz-full-screen {
+   	overflow: auto !important;
+   	/*width: 100%;*/
+	/*height: 100vh;*/
+}
+#goFull {
+	position: absolute;
+	width: 200px;
+	left: 50%;
+	margin-left: -100px;
+	top: 50%;
+	z-index: 1001;
+}
+#goFull.presentation {
+	display: none;
+}
