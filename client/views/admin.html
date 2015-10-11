@@ -17,8 +17,8 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-8">
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">Home</a></li>
-            <li><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>
+            <li><a href="/presentation">Show Slide</a></li>
+            <!-- <li><a href="#">Link</a></li> -->
           </ul>
         </div><!-- /.navbar-collapse -->
       </div>
@@ -33,17 +33,17 @@
 		  <div class="panel-body">
 			
 		  	<form id="add-slide-form">
-			  <div class="form-group">
+			  <!-- <div class="form-group">
 			    <label for="exampleInputEmail1">Image Name</label>
 			    <input type="text" class="form-control" id="filename" placeholder="Image Name">
-			  </div>
+			  </div> -->
 			  <div class="form-group">
 			    <label for="exampleInputPassword1">Index</label>
-			    <input type="text" class="form-control" id="index" placeholder="Index">
+			    <input type="text" class="form-control" id="index" placeholder="Index" value="{{ totalSlides }}">
 			  </div>
 			  <div class="form-group">
 			    <label for="exampleInputFile">Upload Image</label>
-			    <input type="file" id="name">
+			    <input type="file" id="file">
 			  </div>
 			  <button type="submit" class="btn btn-success"><i class="glyphicon glyphicon-plus"></i> Add Slide</button>
 			</form>
@@ -63,4 +63,10 @@
 		</div>
 
 	</div>
+
+	{{#each images}}
+      <div>
+        <a href="{{this.url}}" target="_blank"><img src="{{this.url store='thumbs'}}" alt="" class="thumbnail" /></a>
+      </div>
+    {{/each}}
 </template>

@@ -6,3 +6,9 @@ fourseven:scss
 msavin:mongol
 accounts-password
 accounts-ui
+mrt:jquery-ui-sortable
+cfs:standard-packages
+cfs:gridfs
+cfs:ui
+cfs:filesystem
+flowkey:hotkeys

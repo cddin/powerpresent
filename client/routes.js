@@ -5,6 +5,7 @@ Router.configure({
 
 Router.route('/', {name: 'home', controller: 'MainController'});
 Router.route('/admin', {name: 'adminView'});
+Router.route('/presentation', {name: 'presentationView'});
 Router.route('/client', {name: 'clientView'});
 
 MainController = RouteController.extend({
